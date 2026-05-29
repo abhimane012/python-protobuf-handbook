@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+/*
+Question:
+Create a proto3 message for Person (example: Michael Jordan)
+
+Fields:
+- First Name
+- List of middle names
+- Last Name
+*/
+
+message Person {
+  string first_name = 1;
+
+  // List of middle names (can be empty if none)
+  repeated string middle_names = 2;
+
+  string last_name = 3;
+}

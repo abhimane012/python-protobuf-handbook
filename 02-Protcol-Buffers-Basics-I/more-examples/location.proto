@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+/*
+Question:
+Create a proto3 message for Latitude and Longitude
+(example: -33.865382, 151.192861)
+with the following fields:
+- Latitude (number)
+- Longitude (number)
+*/
+
+message LatLong {
+  double latitude = 1;
+  double longitude = 2;
+}

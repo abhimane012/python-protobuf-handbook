@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+/*
+Question:
+Create a proto3 message for Money (example: USD 35.42),
+where:
+- 35 = integral amount
+- 42 = decimal amount
+
+Fields required:
+- Currency Code (string)
+- Integral amount (number)
+- Decimal amount (number)
+*/
+
+message Money {
+  string currency_code = 1;
+  int64 integral_amount = 2;
+  int32 decimal_amount = 3;
+}

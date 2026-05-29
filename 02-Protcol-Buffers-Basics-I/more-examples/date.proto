@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+/*
+Question:
+Create a proto3 message for a Date (example: 2018/03/15)
+with the following fields:
+- Year (number)
+- Month (number)
+- Day (number)
+*/
+
+message Date {
+  int32 year = 1;
+  int32 month = 2;
+  int32 day = 3;
+}
