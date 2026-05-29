@@ -4,4 +4,7 @@ version = "0.1.0"
 description = "protocol-buffers-hands-on"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "protobuf>=7.35.0",
+    "ruff>=0.15.15",
+]
