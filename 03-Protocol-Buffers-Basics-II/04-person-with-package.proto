@@ -1,0 +1,56 @@
+// The syntax of this file is prtocol buffers version 3. The syntax must be specified at the top of the file.
+syntax = "proto3";
+
+import "03-Protocol-Buffers-Basics-II/04-date-with-package.proto";
+
+package person;
+
+/* 
+Person is a message that represents a 
+person with various attributes such as age, 
+first name, last name, small picture, profile verification status, 
+height, and a list of phone numbers.
+*/
+message Person {
+    // The age of the person.
+    int32 age = 1;
+    // The first name of the person.
+    string first_name = 2;
+    // The last name of the person.
+    string last_name = 3;
+    // A small picture of the person, stored as bytes. represens a small .jpg image.
+    bytes small_picture = 4;
+    // A boolean indicating whether the person's profile is verified or not.
+    bool is_profile_verified = 5;
+    // The height of the person in some unit (e.g., centimeters or inches).
+    float height = 6;
+
+    // A list of phone numbers associated with the person. Each phone number is represented as a string.
+    repeated string phone_numbers = 7;
+
+    // An enumeration representing different eye colors. The values are assigned explicitly to ensure they have specific integer representations.
+    enum EyeColor {
+        UNKNOWN = 0; // Default value, represents an unknown eye color.
+        BLUE = 1; // Represents blue eye color.
+        GREEN = 2; // Represents green eye color.
+        BROWN = 3; // Represents brown eye color.
+        HAZEL = 4; // Represents hazel eye color.
+        GRAY = 5; // Represents gray eye color.
+    }
+
+    // The eye color of the person, represented as an enumeration. The default value is UNKNOWN (0).
+    EyeColor eye_color = 8;
+
+    my.date.Date birth_date = 9; // The birth date of the person, represented as a Date message.
+
+    // An Address message that represents an address associated with the person. It contains fields for address line 1, address line 2, zip code, city, and country.
+    message Address {
+        string address_line1 = 1;
+        string address_line2 = 2;
+        string zip_code = 3;
+        string city = 4;
+        string country = 5;
+    }
+
+    repeated Address addresses = 10; // A list of addresses associated with the person. Each address is represented as an Address message.
+}
