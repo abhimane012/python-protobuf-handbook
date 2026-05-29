@@ -1,0 +1,27 @@
+// The syntax of this file is prtocol buffers version 3. The syntax must be specified at the top of the file.
+syntax = "proto3";
+
+/* 
+Person is a message that represents a 
+person with various attributes such as age, 
+first name, last name, small picture, profile verification status, 
+height, and a list of phone numbers.
+*/
+message Person {
+    // The age of the person.
+    int32 age = 1;
+    // The first name of the person.
+    string first_name = 2;
+    // The last name of the person.
+    string last_name = 3;
+    // A small picture of the person, stored as bytes. represens a small .jpg image.
+    bytes small_picture = 4;
+    // A boolean indicating whether the person's profile is verified or not.
+    bool is_profile_verified = 5;
+    // The height of the person in some unit (e.g., centimeters or inches).
+    float height = 6;
+
+    // A list of phone numbers associated with the person. Each phone number is represented as a string.
+    repeated string phone_numbers = 7;
+}
+
